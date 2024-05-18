@@ -28,7 +28,7 @@ func JsonEncode(v interface{}) string {
 func JsonEncodeIndent(v interface{}) string {
 	encodeData, err := json.MarshalIndent(v, "", "    ")
 	if nil != err {
-		dhlog.Info("JsonEncode Error: ", err)
+		dhlog.Error("JsonEncode Error: ", err)
 		return ""
 	}
 	return string(encodeData)
@@ -37,7 +37,7 @@ func JsonEncodeIndent(v interface{}) string {
 func PrintJsonEncodeIndent(v interface{}) {
 	encodeData, err := json.MarshalIndent(v, "", "    ")
 	if nil != err {
-		dhlog.Warn("JsonEncode Error: ", err)
+		dhlog.Error("JsonEncode Error: ", err)
 	}
 	dhlog.Info(string(encodeData))
 }
